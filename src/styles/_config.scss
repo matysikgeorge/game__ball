@@ -1,0 +1,35 @@
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+ul,
+ol {
+  list-style: none; 
+}
+
+h1,
+h2,
+p,
+{
+  color: #152536;
+  font-family: Inter;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.container {
+  // max-width: 688px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: content-box;
+}
+
+body {
+  background: #f5f5f5;
+}
