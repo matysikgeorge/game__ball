@@ -11,9 +11,8 @@ ol {
 }
 
 h1,
-h2,
 p {
-  color: #152536;
+  color: white;
   font-family: Inter;
   font-style: normal;
   font-size: 16px;
@@ -22,12 +21,73 @@ p {
 }
 
 .container {
-  width: 100%;
+  width: 1286px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 15px;
   box-sizing: content-box;
 }
 
 body {
-  background: #f5f5f5;
+  background-image: url(../img/fon.webp);
+  height: 100vh;
+}
+
+.main__wrapper {
+  position: relative;
+}
+.main__btn__ball {
+  background-color: rgb(231, 165, 11);
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.main__btn__ball:hover {
+  opacity: 70%;
+}
+
+.footer__btn__score {
+  width: 120px;
+  height: 30px;
+  margin: 10px;
+  bottom: 5%;
+  right: 5%;
+  background-color: #ffd2b4;
+  position: absolute;
+  border-radius: 10px;
+  opacity: 40%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.footer__btn__score:hover {
+  opacity: 80%;
+}
+.footer__time__score {
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  display: inline-block;
+  width: 140px;
+  height: 30px;
+  margin: 10px;
+  position: absolute;
+  top: 5%;
+  right: 3%;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter/Inter_24pt-Regular.ttf);
+  font-weight: 400px;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter/Inter_28pt-Bold.ttf);
+  font-weight: 700px;
 }/*# sourceMappingURL=style.css.map */

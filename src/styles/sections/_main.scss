@@ -1,0 +1,21 @@
+.main {
+  &__wrapper {
+    position: relative;
+  }
+
+  &__btn__ball {
+    background-color: rgb(231, 165, 11);
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      opacity: 70%;
+    }
+  }
+}
