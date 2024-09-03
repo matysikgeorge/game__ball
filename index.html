@@ -5,30 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./src/favicon/favicon-ball-16x16.png"
+      href="./src/favicon/favicon_sun16x16.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/style.css" />
     <script src="./src/scripts/script.js" defer></script>
-    <title>Game Ball</title>
+    <title>Catch the sun</title>
   </head>
   <body>
     <main>
-      <section class="container">
-        <div class="main__wrapper">
-          <!-- <canvas class="main__display">
-          </canvas> -->
-          <button class="main__btn__ball" onclick="pressButtonBall()" id="timerControl" ></button>
+      <div class="sun__wrapper">
+        <button
+          class="sun__button button"
+          onclick="pressButtonSun()"
+          id="timerControl"
+        >
+          Start
+        </button>
+      </div>
+      <div class="container">
+        <div class="timer__wrapper">
+          <p class="timer__score"></p>
         </div>
-      </section>
+        <div class="reset__wrapper">
+          <button
+            class="reset__button button"
+            id="reset__btn"
+            type="submit"
+            onclick="refreshPage()"
+            value="reset"
+          >
+            Restart
+          </button>
+        </div>
+      </div>
     </main>
-    <footer>
-      <section class="container">
-        <div class="footer__wrapper">
-          <button class="footer__btn__score" id="reset__btn" type="submit" onclick="refreshPage()" value="reset">Restart</button>
-          <p class="footer__time__score"></p>
-        </div>
-      </section>
-    </footer>
   </body>
 </html>

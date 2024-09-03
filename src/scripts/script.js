@@ -1,46 +1,53 @@
-const mainElement = document.documentElement;
-const mainElementWidth = mainElement.clientWidth;
-const mainElementHeight = mainElement.clientHeight;
+const mainScreen = document.documentElement;
+const mainScreenWidth = mainScreen.clientWidth;
+const mainScreenHeight = mainScreen.clientHeight;
 
-console.log(mainElementWidth);
-console.log(mainElementHeight);
-console.log(window);
+// console.log(mainScreenWidth);
+// console.log(mainScreenHeight);
+// console.log(window);
 
-const btnBallNode = document.querySelector(".main__btn__ball");
+const sunWrapperNode = document.querySelector(".sun__wrapper");
 
-btnBallNode.addEventListener("click", function () {
-  btnBallNode.style.left = Math.random() * 1200 + "px";
-  btnBallNode.style.top = Math.random() * 600 + "px";
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  btnBallNode.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
-  btnBallNode.style.width = Math.random() * 45 + 50 + "px";
-  btnBallNode.style.height = Math.random() * 45 + 50 + "px";
-  pressButtonBall();
+const viewportWidth = window.innerWidth - sunWrapperNode;
+const viewportHeight = window.innerHeight;
+console.log(viewportWidth, viewportHeight);
+
+const timerScoreNode = document.querySelector(".timer__score"); // - переменная счетчика времени
+const sunButtonNode = document.querySelector(".sun__button"); // переменная мячика
+
+//- Создаем слушатель события при нажатии на мячик
+sunButtonNode.addEventListener("click", function () {
+  sunButtonNode.style.left = Math.random() * 1200 + "px";
+  sunButtonNode.style.top = Math.random() * 600 + "px";
+  // const r = Math.floor(Math.random() * 256); // - Изменение цвета случайным образом
+  // const g = Math.floor(Math.random() * 256);
+  // const b = Math.floor(Math.random() * 256);
+  // sunButtonNode.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+  const size = Math.random() * 50 + 50 + "px"; // - Изменение диаметра круга случайным образом
+  sunButtonNode.style.width = size;
+  sunButtonNode.style.height = size;
+  pressButtonSun();
 });
 
+// - Функция сброса игры/перезагрузки страницы
 function refreshPage() {
   window.location.reload();
 }
 
-let end;
-let start;
-
-function pressButtonBall() {
-  if (timerControl.innerHTML == "Start") {
+// - Функция отсчета времени
+function pressButtonSun() {
+  if (timerControl.innerHTML == "start") {
     timerControl.innerHTML = "Push";
     start = Date.now();
   } else {
-    timerControl.innerHTML = "Start";
+    timerControl.innerHTML = "start";
     end = Date.now();
-    const timeScore = end - start;
-    footerTimeScore.innerHTML = `<p class="footer__time__score"> Score: ${timeScore.toLocaleString()}</p>`;
-    console.log(timeScore);
+    const timer = (end - start) / 1000;
+    timerScoreNode.innerText = `Timer: ${timer.toLocaleString()} s`;
+    // console.log(timer);
   }
 }
 
-const footerTimeScore = document.querySelector(".footer__time__score");
 function updateTime() {}
 
 // - Задачи

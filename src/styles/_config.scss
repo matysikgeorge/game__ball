@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: "Poppins", "Roboto", "SF Pro Display", sans-serif;
 }
 
 ul,
@@ -10,7 +10,6 @@ ol {
   list-style: none;
 }
 
-h1,
 p {
   color: white;
   font-family: Inter;
@@ -21,7 +20,10 @@ p {
 }
 
 .container {
-  width: 1286px;
+  max-width: 456px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 15px;
@@ -30,5 +32,14 @@ p {
 
 body {
   background-image: url(../img/fon.webp);
+  background-repeat: no-repeat;
   height: 100vh;
+}
+
+.button {
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    opacity: 70%;
+  }
 }
